@@ -10,8 +10,7 @@ export default class EasyTransition extends Component {
         path: React.PropTypes.string.isRequired,
         initialStyle: React.PropTypes.object.isRequired,
         transition: React.PropTypes.string.isRequired,
-        finalStyle: React.PropTypes.object.isRequired,
-        leaveStyle: React.PropTypes.object.isRequired
+        finalStyle: React.PropTypes.object.isRequired
     };
     componentWillReceiveProps(nextProps) {
         this.setState({
@@ -55,7 +54,7 @@ class TransitionChild extends Component {
         }, false)
     }
     componentWillLeave(callback) {
-        Object.assign(this.page.style, this.props.leaveStyle)
+        Object.assign(this.page.style, this.props.initialStyle)
         let transitionsRemaining = this.props.transition.split(',').length
         this.page.addEventListener("transitionend", (event) => {
             transitionsRemaining--
