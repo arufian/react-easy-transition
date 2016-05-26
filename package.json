@@ -79,7 +79,8 @@
   "scripts": {
     "build": "mkdir -p lib && babel ./src -d lib",
     "lint": "eslint examples src test",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "preinstall": "npm run build"
   },
   "verb": {
     "related": {
